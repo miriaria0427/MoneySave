@@ -52,6 +52,16 @@ class AddListViewController: UIViewController,UITableViewDataSource, UITableView
         return cell
     }
     
+    //セクションの色の設定を行う
+    //func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //let label : UILabel = UILabel()
+        //label.backgroundColor = UIColor(red: 1.0, green: 0.95, blue: 1.0, alpha:1.0)
+        //label.textColor = UIColor.black
+        //label.text = sectionIndex[section]
+        //return label
+    //}
+    
+    
     //セクション名を返す
     func tableView(_ tableView:UITableView, titleForHeaderInSection section:Int) -> String?{
         print("セクション名\(sectionIndex[section])")
