@@ -12,6 +12,9 @@ class SettingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ->背景色を設定する
+        self.view.backgroundColor = UIColor(red: 1.0, green: 0.95, blue: 1.0, alpha:1.0)
 
         // Do any additional setup after loading the view.
     }

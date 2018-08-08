@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditListViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class EditListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     

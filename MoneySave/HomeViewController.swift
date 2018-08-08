@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SCLAlertView
 
 class HomeViewController: UIViewController {
     
@@ -26,10 +27,6 @@ class HomeViewController: UIViewController {
         //ラベルに下線をつける
         let textlabel = NowMoney.text!
         let textAttributes: [NSAttributedStringKey : Any] = [
-            //.font : UIFont.systemFont(ofSize: 24.0),
-            //.foregroundColor : UIColor.green,
-            //.strokeColor : UIColor.red,
-            //.strokeWidth : -3.0,
             .underlineStyle :NSUnderlineStyle.styleSingle.rawValue
         ]
        

@@ -7,33 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62E7302540E9ABB344305502 /* Pods_MoneySave.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F200527AFEB7B9E4BDE1B31 /* Pods_MoneySave.framework */; };
 		8209987B20F2736900186833 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209987A20F2736900186833 /* SettingViewController.swift */; };
 		8209987D20F274B400186833 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209987C20F274B400186833 /* HomeViewController.swift */; };
 		8209988320F2756000186833 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209988220F2756000186833 /* ListViewController.swift */; };
 		8209988520F2760B00186833 /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209988420F2760B00186833 /* AddListViewController.swift */; };
 		8209988720F2762D00186833 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209988620F2762D00186833 /* EditListViewController.swift */; };
 		8209988920F2774F00186833 /* EditReViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8209988820F2774F00186833 /* EditReViewController.swift */; };
-		822C1F2C20FDE83E00084D17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 822C1F2B20FDE83D00084D17 /* ViewController.swift */; };
+		826761CC2108D21B00463998 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826761CA2108D21B00463998 /* ListTableViewCell.swift */; };
+		826761CD2108D21B00463998 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 826761CB2108D21B00463998 /* ListTableViewCell.xib */; };
 		82C1859D20E8AD7400DF8B7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82C1859C20E8AD7400DF8B7D /* AppDelegate.swift */; };
 		82C185A220E8AD7400DF8B7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C185A020E8AD7400DF8B7D /* Main.storyboard */; };
 		82C185A420E8AD7700DF8B7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82C185A320E8AD7700DF8B7D /* Assets.xcassets */; };
 		82C185A720E8AD7700DF8B7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C185A520E8AD7700DF8B7D /* LaunchScreen.storyboard */; };
+		82E55A6F211735CD00763EBA /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E55A6E211735CD00763EBA /* Money.swift */; };
+		82E55A7121174BBC00763EBA /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E55A7021174BBC00763EBA /* Review.swift */; };
+		82E55A75211AB64D00763EBA /* AddMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82E55A74211AB64D00763EBA /* AddMoneyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		561C542C2DB737DD59A3C3AC /* Pods-MoneySave.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySave.release.xcconfig"; path = "Pods/Target Support Files/Pods-MoneySave/Pods-MoneySave.release.xcconfig"; sourceTree = "<group>"; };
+		67E4DABA442D302791E032CB /* Pods-MoneySave.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneySave.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneySave/Pods-MoneySave.debug.xcconfig"; sourceTree = "<group>"; };
+		6F200527AFEB7B9E4BDE1B31 /* Pods_MoneySave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MoneySave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8209987A20F2736900186833 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		8209987C20F274B400186833 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		8209988220F2756000186833 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		8209988420F2760B00186833 /* AddListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddListViewController.swift; sourceTree = "<group>"; };
 		8209988620F2762D00186833 /* EditListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		8209988820F2774F00186833 /* EditReViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReViewController.swift; sourceTree = "<group>"; };
-		822C1F2B20FDE83D00084D17 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		826761CA2108D21B00463998 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		826761CB2108D21B00463998 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
 		82C1859920E8AD7400DF8B7D /* MoneySave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoneySave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		82C1859C20E8AD7400DF8B7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		82C185A120E8AD7400DF8B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		82C185A320E8AD7700DF8B7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82C185A620E8AD7700DF8B7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82C185A820E8AD7700DF8B7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82E55A6E211735CD00763EBA /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		82E55A7021174BBC00763EBA /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		82E55A74211AB64D00763EBA /* AddMoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62E7302540E9ABB344305502 /* Pods_MoneySave.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F01475F8B9A8E810C70D2BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F200527AFEB7B9E4BDE1B31 /* Pods_MoneySave.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		82C1859020E8AD7400DF8B7D = {
 			isa = PBXGroup;
 			children = (
 				82C1859B20E8AD7400DF8B7D /* MoneySave */,
 				82C1859A20E8AD7400DF8B7D /* Products */,
+				97C5DC40BBB15C8BC84CA0B0 /* Pods */,
+				6F01475F8B9A8E810C70D2BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,11 +98,24 @@
 				8209987C20F274B400186833 /* HomeViewController.swift */,
 				8209988220F2756000186833 /* ListViewController.swift */,
 				8209988420F2760B00186833 /* AddListViewController.swift */,
-				822C1F2B20FDE83D00084D17 /* ViewController.swift */,
 				8209988620F2762D00186833 /* EditListViewController.swift */,
 				8209988820F2774F00186833 /* EditReViewController.swift */,
+				826761CA2108D21B00463998 /* ListTableViewCell.swift */,
+				826761CB2108D21B00463998 /* ListTableViewCell.xib */,
+				82E55A6E211735CD00763EBA /* Money.swift */,
+				82E55A7021174BBC00763EBA /* Review.swift */,
+				82E55A74211AB64D00763EBA /* AddMoneyViewController.swift */,
 			);
 			path = MoneySave;
+			sourceTree = "<group>";
+		};
+		97C5DC40BBB15C8BC84CA0B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				67E4DABA442D302791E032CB /* Pods-MoneySave.debug.xcconfig */,
+				561C542C2DB737DD59A3C3AC /* Pods-MoneySave.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 82C185AB20E8AD7700DF8B7D /* Build configuration list for PBXNativeTarget "MoneySave" */;
 			buildPhases = (
+				C57BF369FB37916B83F31900 /* [CP] Check Pods Manifest.lock */,
 				82C1859520E8AD7400DF8B7D /* Sources */,
 				82C1859620E8AD7400DF8B7D /* Frameworks */,
 				82C1859720E8AD7400DF8B7D /* Resources */,
+				C0860D6363B982EBD9B15BC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -141,12 +179,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				82C185A720E8AD7700DF8B7D /* LaunchScreen.storyboard in Resources */,
+				826761CD2108D21B00463998 /* ListTableViewCell.xib in Resources */,
 				82C185A420E8AD7700DF8B7D /* Assets.xcassets in Resources */,
 				82C185A220E8AD7400DF8B7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0860D6363B982EBD9B15BC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MoneySave/Pods-MoneySave-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MoneySave/Pods-MoneySave-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C57BF369FB37916B83F31900 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MoneySave-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		82C1859520E8AD7400DF8B7D /* Sources */ = {
@@ -156,10 +238,13 @@
 				8209988520F2760B00186833 /* AddListViewController.swift in Sources */,
 				8209988920F2774F00186833 /* EditReViewController.swift in Sources */,
 				8209987D20F274B400186833 /* HomeViewController.swift in Sources */,
+				82E55A75211AB64D00763EBA /* AddMoneyViewController.swift in Sources */,
 				82C1859D20E8AD7400DF8B7D /* AppDelegate.swift in Sources */,
 				8209988320F2756000186833 /* ListViewController.swift in Sources */,
+				826761CC2108D21B00463998 /* ListTableViewCell.swift in Sources */,
+				82E55A7121174BBC00763EBA /* Review.swift in Sources */,
+				82E55A6F211735CD00763EBA /* Money.swift in Sources */,
 				8209988720F2762D00186833 /* EditListViewController.swift in Sources */,
-				822C1F2C20FDE83E00084D17 /* ViewController.swift in Sources */,
 				8209987B20F2736900186833 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +387,7 @@
 		};
 		82C185AC20E8AD7700DF8B7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67E4DABA442D302791E032CB /* Pods-MoneySave.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -320,6 +406,7 @@
 		};
 		82C185AD20E8AD7700DF8B7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 561C542C2DB737DD59A3C3AC /* Pods-MoneySave.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

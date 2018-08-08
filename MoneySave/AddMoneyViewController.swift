@@ -8,27 +8,23 @@
 
 import UIKit
 
-class AddListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
-    @IBOutlet weak var tableView: UITableView!
-    
-    @IBAction func AddList(_ sender: Any) {
-        
-    }
+    @IBOutlet weak var tableview: UITableView!
     
     //セクション
-    var sectionIndex:[String] = ["目標内容","目標金額"]
+    var sectionIndex:[String] = ["日付","金額","メモ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
+        tableview.dataSource = self
+        tableview.delegate = self
         
         // データのないセルを表示しないようにする
-        tableView.tableFooterView = UIView(frame: .zero)
+        tableview.tableFooterView = UIView(frame: .zero)
         //セクションの高さ
-        tableView.sectionHeaderHeight = 40;
+        tableview.sectionHeaderHeight = 40;
         
         // Do any additional setup after loading the view.
     }
@@ -45,7 +41,7 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 再利用可能な cell を得る
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddMoneyCell", for: indexPath)
         // 値を設定する.
         cell.textLabel!.text = "Row \(indexPath.row)"
         return cell
@@ -53,11 +49,11 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     //セクションの色の設定を行う
     //func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //let label : UILabel = UILabel()
-        //label.backgroundColor = UIColor(red: 1.0, green: 0.95, blue: 1.0, alpha:1.0)
-        //label.textColor = UIColor.black
-        //label.text = sectionIndex[section]
-        //return label
+    //let label : UILabel = UILabel()
+    //label.backgroundColor = UIColor(red: 1.0, green: 0.95, blue: 1.0, alpha:1.0)
+    //label.textColor = UIColor.black
+    //label.text = sectionIndex[section]
+    //return label
     //}
     
     
