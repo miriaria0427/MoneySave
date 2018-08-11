@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--貯金-->
+        <!--貯金箱-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Home" id="BYZ-38-t0r" customClass="HomeViewController" customModule="MoneySave" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" image="Pig_Pink" translatesAutoresizingMaskIntoConstraints="NO" id="7zQ-IM-dox">
-                                <rect key="frame" x="60" y="280" width="255" height="223"/>
+                                <rect key="frame" x="60" y="324" width="255" height="179"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78z-4g-Ebe">
                                 <rect key="frame" x="60" y="528" width="255" height="50"/>
@@ -42,11 +42,11 @@
                                 </constraints>
                                 <state key="normal" title="貯金する！" backgroundImage="pinkButton"/>
                                 <connections>
-                                    <segue destination="87Z-R0-7eE" kind="presentation" id="6tX-HB-qf7"/>
+                                    <segue destination="xKW-CG-E6W" kind="presentation" id="6tX-HB-qf7"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qZ-4K-9aa">
-                                <rect key="frame" x="40" y="130" width="295" height="50"/>
+                                <rect key="frame" x="40" y="174" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="3vS-IA-tov"/>
                                 </constraints>
@@ -55,7 +55,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCc-nl-1IP">
-                                <rect key="frame" x="40" y="180" width="295" height="50"/>
+                                <rect key="frame" x="40" y="224" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bqz-pC-C8Y"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="752" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBA-Yn-dhD">
-                                <rect key="frame" x="40" y="50" width="295" height="50"/>
+                                <rect key="frame" x="40" y="94" width="295" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="F0Y-fP-m9F"/>
                                 </constraints>
@@ -72,13 +72,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUk-Yx-zSW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="貯金" id="y8i-8l-DoV"/>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="0.1719820205" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -101,9 +94,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="貯金" image="Pig_Black" id="Ner-5L-0X0">
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="貯金箱" id="Ec7-iJ-Zft"/>
                     <connections>
                         <outlet property="Mokuhyolabel" destination="GBA-Yn-dhD" id="x8U-6R-4b2"/>
                         <outlet property="NowMoney" destination="5qZ-4K-9aa" id="anq-z0-qGF"/>
@@ -113,7 +104,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731" y="-30"/>
+            <point key="canvasLocation" x="1669.5999999999999" y="-30.134932533733135"/>
         </scene>
         <!--設定-->
         <scene sceneID="dg0-Lb-m26">
@@ -123,16 +114,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cvV-Ec-Z84">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="設定" id="Hzh-08-wbE"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ly-28-i8T">
                                 <rect key="frame" x="60" y="144" width="255" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="wva-cy-CfQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="I63-7c-g9P"/>
                                 </constraints>
                                 <state key="normal" title="Twitterでつぶやく" backgroundImage="pinkButton"/>
                             </button>
@@ -146,25 +131,22 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="0.1650524401" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="cc3-0c-noY" firstAttribute="top" secondItem="3ly-28-i8T" secondAttribute="bottom" constant="60" id="2FR-Yn-476"/>
-                            <constraint firstItem="cvV-Ec-Z84" firstAttribute="leading" secondItem="1VB-oz-9EJ" secondAttribute="leading" id="CO5-Ca-RQB"/>
-                            <constraint firstItem="cvV-Ec-Z84" firstAttribute="centerX" secondItem="3ly-28-i8T" secondAttribute="centerX" id="EDx-od-Vzo"/>
-                            <constraint firstItem="zZN-SP-Q34" firstAttribute="trailing" secondItem="3ly-28-i8T" secondAttribute="trailing" constant="60" id="KSc-f6-Wno"/>
-                            <constraint firstItem="3ly-28-i8T" firstAttribute="top" secondItem="cvV-Ec-Z84" secondAttribute="bottom" constant="100" id="Kev-cy-vss"/>
-                            <constraint firstItem="cvV-Ec-Z84" firstAttribute="top" secondItem="1VB-oz-9EJ" secondAttribute="top" id="Qh8-2i-Kbg"/>
+                            <constraint firstItem="3ly-28-i8T" firstAttribute="top" secondItem="zZN-SP-Q34" secondAttribute="top" constant="80" id="1cQ-pT-Uhx"/>
+                            <constraint firstItem="cc3-0c-noY" firstAttribute="top" secondItem="3ly-28-i8T" secondAttribute="bottom" constant="60" id="L6e-zS-ijj"/>
+                            <constraint firstItem="zZN-SP-Q34" firstAttribute="trailing" secondItem="3ly-28-i8T" secondAttribute="trailing" constant="60" id="cSe-8M-cc0"/>
                             <constraint firstItem="zZN-SP-Q34" firstAttribute="trailing" secondItem="cc3-0c-noY" secondAttribute="trailing" constant="60" id="eMg-Hk-HK2"/>
-                            <constraint firstItem="3ly-28-i8T" firstAttribute="leading" secondItem="zZN-SP-Q34" secondAttribute="leading" constant="60" id="wwx-LV-pkS"/>
+                            <constraint firstItem="3ly-28-i8T" firstAttribute="leading" secondItem="zZN-SP-Q34" secondAttribute="leading" constant="60" id="ep1-Du-LKd"/>
                             <constraint firstItem="cc3-0c-noY" firstAttribute="leading" secondItem="zZN-SP-Q34" secondAttribute="leading" constant="60" id="z5h-IB-u3K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zZN-SP-Q34"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="設定" image="Setting" id="zol-4N-sxO"/>
+                    <navigationItem key="navigationItem" title="設定" id="Pb4-i4-inY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WDm-zA-7Zi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3560.8000000000002" y="-32.833583208395808"/>
+            <point key="canvasLocation" x="5439.1999999999998" y="-32.833583208395808"/>
         </scene>
-        <!--Add Money View Controller-->
+        <!--貯金-->
         <scene sceneID="zzY-ce-1v8">
             <objects>
                 <viewController id="87Z-R0-7eE" customClass="AddMoneyViewController" customModule="MoneySave" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,39 +158,54 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="0.1650524401" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddMoneyCell" rowHeight="46" id="5fN-vd-ddE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="AddMoneyCell" rowHeight="46" id="5fN-vd-ddE">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="46"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5fN-vd-ddE" id="HQz-b8-hJt">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="45.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="45.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VSy-md-yxl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I89-Xq-UQB">
+                                <rect key="frame" x="40" y="587" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="YRF-Jh-YjD"/>
+                                </constraints>
+                                <state key="normal" title="登録" backgroundImage="pinkButton"/>
+                                <connections>
+                                    <action selector="AddMoney:" destination="87Z-R0-7eE" eventType="touchUpInside" id="Ft3-f4-aSk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="I89-Xq-UQB" secondAttribute="trailing" constant="40" id="0wW-Ms-Dts"/>
                             <constraint firstItem="4Lr-zY-zub" firstAttribute="top" secondItem="4ry-rm-GJR" secondAttribute="top" id="2na-sS-oIu"/>
                             <constraint firstItem="4Lr-zY-zub" firstAttribute="leading" secondItem="fSv-UN-mVy" secondAttribute="leading" id="Gst-O8-dfV"/>
                             <constraint firstItem="4Lr-zY-zub" firstAttribute="bottom" secondItem="fSv-UN-mVy" secondAttribute="bottom" id="Jh9-KW-ry5"/>
-                            <constraint firstItem="4Lr-zY-zub" firstAttribute="trailing" secondItem="VSy-md-yxl" secondAttribute="trailing" id="Rel-Jq-PNi"/>
-                            <constraint firstItem="4Lr-zY-zub" firstAttribute="top" secondItem="VSy-md-yxl" secondAttribute="top" id="bYU-jl-x0W"/>
+                            <constraint firstItem="fSv-UN-mVy" firstAttribute="bottom" secondItem="I89-Xq-UQB" secondAttribute="bottom" constant="40" id="gtl-Xd-EvO"/>
                             <constraint firstAttribute="trailing" secondItem="4Lr-zY-zub" secondAttribute="trailing" id="h8E-ZI-q2i"/>
-                            <constraint firstItem="4Lr-zY-zub" firstAttribute="leading" secondItem="VSy-md-yxl" secondAttribute="leading" id="maX-yn-3aL"/>
+                            <constraint firstItem="I89-Xq-UQB" firstAttribute="leading" secondItem="fSv-UN-mVy" secondAttribute="leading" constant="40" id="m7j-Cf-K6p"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fSv-UN-mVy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="貯金" id="KTK-lI-AOB">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="Tub-Qx-IWx">
+                            <connections>
+                                <segue destination="qzB-NG-cgl" kind="unwind" unwindAction="unwind:" id="5gI-Oj-SAO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="4Lr-zY-zub" id="KrN-YN-3ec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swt-l2-YXo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qzB-NG-cgl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-196" y="779.46026986506752"/>
+            <point key="canvasLocation" x="743.20000000000005" y="779.46026986506752"/>
         </scene>
         <!--Add List View Controller-->
         <scene sceneID="Hxr-G4-Pf7">
@@ -238,7 +235,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="BWW-Jv-ffM"/>
                                 </constraints>
-                                <state key="normal" title="目標登録❤︎" backgroundImage="pinkButton"/>
+                                <state key="normal" title="登録" backgroundImage="pinkButton"/>
                                 <connections>
                                     <action selector="AddList:" destination="HQA-lj-Lz2" eventType="touchUpInside" id="zNM-bb-nem"/>
                                 </connections>
@@ -247,12 +244,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Okn-io-RmP" firstAttribute="bottom" secondItem="P2o-dQ-nRf" secondAttribute="bottom" id="1W7-TG-za4"/>
+                            <constraint firstItem="Okn-io-RmP" firstAttribute="trailing" secondItem="P2o-dQ-nRf" secondAttribute="trailing" id="6ex-4G-2fT"/>
                             <constraint firstItem="P2o-dQ-nRf" firstAttribute="bottom" secondItem="Eto-aN-F3w" secondAttribute="bottom" constant="40" id="CAh-lo-UtE"/>
                             <constraint firstItem="Okn-io-RmP" firstAttribute="trailing" secondItem="P2o-dQ-nRf" secondAttribute="trailing" id="LoW-S4-XTu"/>
+                            <constraint firstItem="Okn-io-RmP" firstAttribute="bottom" secondItem="P2o-dQ-nRf" secondAttribute="bottom" id="P60-3W-3V6"/>
                             <constraint firstItem="Okn-io-RmP" firstAttribute="leading" secondItem="P2o-dQ-nRf" secondAttribute="leading" id="Pb3-6E-1SL"/>
+                            <constraint firstItem="Okn-io-RmP" firstAttribute="leading" secondItem="P2o-dQ-nRf" secondAttribute="leading" id="gK6-gO-3i8"/>
                             <constraint firstItem="P2o-dQ-nRf" firstAttribute="trailing" secondItem="Eto-aN-F3w" secondAttribute="trailing" constant="40" id="u94-wV-E8h"/>
                             <constraint firstItem="Okn-io-RmP" firstAttribute="top" secondItem="P2o-dQ-nRf" secondAttribute="top" id="v7v-bx-BXT"/>
                             <constraint firstItem="Eto-aN-F3w" firstAttribute="leading" secondItem="P2o-dQ-nRf" secondAttribute="leading" constant="40" id="yzY-K2-1X5"/>
+                            <constraint firstItem="Okn-io-RmP" firstAttribute="top" secondItem="P2o-dQ-nRf" secondAttribute="top" id="zKE-cE-yFS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P2o-dQ-nRf"/>
                     </view>
@@ -262,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3A-XH-1X6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="831"/>
+            <point key="canvasLocation" x="3432.8000000000002" y="830.73463268365822"/>
         </scene>
         <!--目標一覧-->
         <scene sceneID="zpv-sE-pEX">
@@ -272,13 +273,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6h2-ra-juz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6h2-ra-juz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="0.1650524401" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6h2-ra-juz" firstAttribute="leading" secondItem="pSH-gc-rvO" secondAttribute="leading" id="gbT-i3-7Kn"/>
+                            <constraint firstItem="6h2-ra-juz" firstAttribute="top" secondItem="7Sm-cO-xJY" secondAttribute="top" id="jf5-3i-HFw"/>
+                            <constraint firstItem="6h2-ra-juz" firstAttribute="trailing" secondItem="pSH-gc-rvO" secondAttribute="trailing" id="mLM-1d-i3V"/>
+                            <constraint firstItem="6h2-ra-juz" firstAttribute="bottom" secondItem="pSH-gc-rvO" secondAttribute="bottom" id="xG4-yg-Doy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pSH-gc-rvO"/>
                     </view>
                     <navigationItem key="navigationItem" title="目標一覧" id="5KZ-NW-08n">
@@ -295,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yd-hz-nE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2584.8000000000002" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="3524" y="-31.03448275862069"/>
         </scene>
         <!--Edit List View Controller-->
         <scene sceneID="0fj-bv-vBd">
@@ -325,7 +331,11 @@
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="leading" secondItem="Xh3-Ff-N2r" secondAttribute="leading" id="7SD-8G-OYA"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="trailing" secondItem="Xh3-Ff-N2r" secondAttribute="trailing" id="7hV-60-mjb"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="top" secondItem="Xh3-Ff-N2r" secondAttribute="top" id="9xL-Hl-ac4"/>
+                            <constraint firstItem="Qbw-Ba-ei5" firstAttribute="leading" secondItem="Xh3-Ff-N2r" secondAttribute="leading" id="DBt-wX-Evb"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="bottom" secondItem="Xh3-Ff-N2r" secondAttribute="bottom" id="HlC-yX-iQh"/>
+                            <constraint firstItem="Qbw-Ba-ei5" firstAttribute="top" secondItem="Xh3-Ff-N2r" secondAttribute="top" id="mRY-TK-eBy"/>
+                            <constraint firstItem="Qbw-Ba-ei5" firstAttribute="trailing" secondItem="Xh3-Ff-N2r" secondAttribute="trailing" id="tfq-LN-buz"/>
+                            <constraint firstItem="Qbw-Ba-ei5" firstAttribute="bottom" secondItem="Xh3-Ff-N2r" secondAttribute="bottom" id="unm-Tk-vSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xh3-Ff-N2r"/>
                     </view>
@@ -336,7 +346,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q2H-uy-YMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1783" y="831"/>
+            <point key="canvasLocation" x="2720.8000000000002" y="830.73463268365822"/>
         </scene>
         <!--Edit Re View Controller-->
         <scene sceneID="Nd7-Pq-OX6">
@@ -371,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPn-PS-TWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="799"/>
+            <point key="canvasLocation" x="1719.2" y="798.35082458770626"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EVQ-p0-2zD">
@@ -384,9 +394,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="2ig-Ay-Vas"/>
+                        <segue destination="8y2-KE-EDp" kind="relationship" relationship="viewControllers" id="2ig-Ay-Vas"/>
                         <segue destination="ef7-nd-Bbo" kind="relationship" relationship="viewControllers" id="gwN-KP-yoz"/>
-                        <segue destination="rCq-RC-7Ja" kind="relationship" relationship="viewControllers" id="gvO-Pt-D7i"/>
+                        <segue destination="YU8-Kf-NA7" kind="relationship" relationship="viewControllers" id="gvO-Pt-D7i"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NAt-kM-ko3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -410,7 +420,65 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bxv-GP-tOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.5999999999999" y="-31.03448275862069"/>
+            <point key="canvasLocation" x="2584.8000000000002" y="-31.03448275862069"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GVk-lt-oSw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xKW-CG-E6W" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5DU-zm-8QW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="87Z-R0-7eE" kind="relationship" relationship="rootViewController" id="ANg-LZ-CBf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Thg-IH-ftW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196" y="779.46026986506752"/>
+        </scene>
+        <!--設定-->
+        <scene sceneID="6Da-dX-lLU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YU8-Kf-NA7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="設定" image="Setting" id="zol-4N-sxO"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xtz-vX-RDb">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rCq-RC-7Ja" kind="relationship" relationship="rootViewController" id="Vu2-ze-xSE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZe-LZ-drJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4500" y="-32.833583208395808"/>
+        </scene>
+        <!--貯金-->
+        <scene sceneID="9b7-f4-s8D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8y2-KE-EDp" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" tag="1" title="貯金" image="Pig_Black" id="Ner-5L-0X0">
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xyp-nC-KUY">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="dtQ-bk-eq3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hcQ-gp-z3s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730.39999999999998" y="-30.134932533733135"/>
         </scene>
     </scenes>
     <resources>

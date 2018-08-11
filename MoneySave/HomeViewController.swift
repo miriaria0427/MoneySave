@@ -40,6 +40,10 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    //貯金額入力画面から戻ってきた時に呼ばれるメソッド
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
