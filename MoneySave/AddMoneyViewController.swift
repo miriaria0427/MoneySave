@@ -9,6 +9,7 @@
 import UIKit
 import SCLAlertView
 import RealmSwift
+import ActionSheetPicker_3_0
 
 class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     
@@ -21,9 +22,6 @@ class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableView
     let moneyIndexPath: IndexPath = [1,0] //貯金額項目
     let memoIndexPath: IndexPath = [2,0] //メモ項目
     
-    //セルの情報を保持しておく変数
-    //let cellInfo: UITableViewCell
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,8 +30,7 @@ class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableView
         
         // データのないセルを表示しないようにする
         tableview.tableFooterView = UIView(frame: .zero)
-        //セクションの高さ
-        tableview.sectionHeaderHeight = 40;
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -50,14 +47,15 @@ class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "AddMoneyCell", for: indexPath)
         //１番目のセクションには本日日付を初期表示する
         if(indexPath == dateIndexPath){
+            //XX年X月X日の形に変換
             let f = DateFormatter()
             f.dateStyle = .long
             f.timeStyle = .none
             f.locale = Locale(identifier: "ja_JP")
             let now = Date()
-            cell.textLabel!.text = (f.string(from: now))
+            cell.textLabel?.text = (f.string(from: now))
         }else{
-        cell.textLabel!.text = ""
+            cell.textLabel?.text = ""
         }
         return cell
     }
@@ -80,64 +78,73 @@ class AddMoneyViewController: UIViewController,UITableViewDataSource,UITableView
     //各セルが選択された時の挙動
     // 各セルを選択した時に実行されるメソッド
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexPath\(indexPath)")
         
         //SCLAlertViewのインスタンス作成
         let alert = SCLAlertView()
+        //選択した表示中のセルを取得する
+        let cell = tableView.cellForRow(at: indexPath)
         
         switch indexPath {
+        //日付セルタップ
         case dateIndexPath:
-            //ピッカー設定
-            let datePickerView:UIDatePicker = UIDatePicker()
-            datePickerView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: datePickerView.bounds.size.height)
-            datePickerView.layer.position = CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height-20.0)
-            datePickerView.backgroundColor = UIColor.lightGray
-            datePickerView.datePickerMode = UIDatePickerMode.date
-            
-            // 決定バーの生成
-            let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-            let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-            let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-            toolbar.setItems([spacelItem, doneItem], animated: true)
-            
-            self.view.addSubview(datePickerView)
-            self.view.addSubview(toolbar)
-            
-        case moneyIndexPath:
-            let txt = alert.addTextField("入力")
-            if let money = txt.text{
-                print("お金の中身\(money)")//入力なし
-            }else{
+            let timePicker = ActionSheetDatePicker(title: "", datePickerMode: UIDatePickerMode.date, selectedDate: Date(), doneBlock: {
+                picker, value, index in
+                //Done押下時は日付情報を反映する
+                //XX年X月X日の形に変換
+                let f = DateFormatter()
+                f.dateStyle = .long
+                f.timeStyle = .none
+                f.locale = Locale(identifier: "ja_JP")
+                cell?.textLabel?.text = f.string(for: value)
+                //print("value = \(String(describing: value))")
+                //print("index = \(String(describing: index))")
+                //print("picker = \(String(describing: picker))")
                 return
-            }
+            }, cancel: { ActionStringCancelBlock in
+                print("cancel")
+                return }, origin: self.view)
+            timePicker?.locale = Calendar.current.locale
+            timePicker?.show()
+            
+        //金額セルタップ
+        case moneyIndexPath:
+            //入力欄の作成
+            let txt = alert.addTextField("入力")
+            //キーボードタイプを数字のみに変更
+            txt.keyboardType = UIKeyboardType.numberPad
             alert.addButton("登録"){
                 //登録ボタンタップ時の挙動（クロージャ）
-                print("ボタンをタップしました")
                 if let money = txt.text{
-                    print("お金の中身\(money)")//入力値はここで拾えてる！
+                    print("お金の中身\(money)")
+                    cell?.textLabel?.text = ("¥\(money)")
                 }else{
                     return
                 }
             }
-            
-            alert.showEdit("貯金", subTitle: "金額を入力して下さい")
-            
+            alert.showEdit("",subTitle: "金額を入力して下さい", closeButtonTitle: "キャンセル")
+        //メモセルタップ
         case memoIndexPath:
-            SCLAlertView().showInfo("Important info", subTitle: "You are great")
+            let txt = alert.addTextField("入力")
+            alert.addButton("登録"){
+                //登録ボタンタップ時の挙動（クロージャ）
+                if let memo = txt.text{
+                    print("メモの中身\(memo)")
+                    cell?.textLabel?.text = memo
+                }else{
+                    return
+                }
+            }
+            alert.showEdit("",subTitle: "メモを入力して下さい", closeButtonTitle: "キャンセル")
         default: break
         }
+    }
+    
+    //登録ボタン押下時の処理
+    @IBAction func AddButton(_ sender: Any) {
         
     }
     
-    // 決定ボタン押下
-    @objc func done() {
-        tableview.endEditing(true)
-        
-        // 日付のフォーマット
-        //let formatter = DateFormatter()
-        //formatter.dateFormat = "yyyy-MM-dd"
-        //textField.text = "\(formatter.string(from: Date()))"
-    }
+    
     
     /*
      // MARK: - Navigation

@@ -175,6 +175,7 @@
                                 </constraints>
                                 <state key="normal" title="登録" backgroundImage="pinkButton"/>
                                 <connections>
+                                    <action selector="AddButton:" destination="87Z-R0-7eE" eventType="touchUpInside" id="Iwf-ZH-SE1"/>
                                     <action selector="AddMoney:" destination="87Z-R0-7eE" eventType="touchUpInside" id="Ft3-f4-aSk"/>
                                 </connections>
                             </button>
@@ -238,6 +239,7 @@
                                 <state key="normal" title="登録" backgroundImage="pinkButton"/>
                                 <connections>
                                     <action selector="AddList:" destination="HQA-lj-Lz2" eventType="touchUpInside" id="zNM-bb-nem"/>
+                                    <segue destination="5ol-1d-JTh" kind="unwind" unwindAction="returnToList:" id="C8Q-0A-bG5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -262,6 +264,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M3A-XH-1X6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5ol-1d-JTh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3432.8000000000002" y="830.73463268365822"/>
         </scene>
@@ -295,8 +298,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tbl" destination="6h2-ra-juz" id="Ykn-P8-5TK"/>
-                        <segue destination="bDp-sY-YmI" kind="show" identifier="CellSegue" id="ir3-qG-NPf"/>
+                        <outlet property="tableView" destination="6h2-ra-juz" id="5Xa-Qt-cVz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yd-hz-nE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -312,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-Ba-ei5">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="0.1650524401" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditCell" id="NzX-FB-BXw">

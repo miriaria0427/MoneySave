@@ -7,17 +7,46 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var Check_before: UIImageView! //選択チェック(未選択時)
+   
     @IBOutlet weak var MokuhyoCellLabel: UILabel! //目標内容
     @IBOutlet weak var NowMoneyCellLabel: UILabel! //現在の貯金額
     @IBOutlet weak var SetMoneyCellLabel: UILabel! //目標額
     @IBOutlet weak var StatusCellLabel: UILabel! //達成・未達成
-    @IBOutlet weak var Pig_NG: UIImageView! //豚(未達成時)
+    @IBOutlet weak var Pig: UIImageView! //ぶたさんアイコン
+    @IBOutlet weak var SelectedButton: UIButton!//選択ボタン
+    @IBOutlet weak var EditButton: UIButton! //編集ボタン
     
+    //カスタムセルにデータを反映させる
+    func setPostData(money: Money){
+        MokuhyoCellLabel?.text = money.goal
+        NowMoneyCellLabel?.text = money.nowMoney
+        SetMoneyCellLabel?.text = money.goalMoney
+        
+        if(money.goalFlg == 1){
+            StatusCellLabel?.text = "達成"
+            let pigImage = UIImage(named: "Pig_OK")
+            Pig.image = pigImage
 
+        }else{
+            StatusCellLabel?.text = "未達成"
+            let pigImage = UIImage(named: "Pig_NG")
+            Pig.image = pigImage
+        }
+        
+        if(money.selectedFlg == 1){
+            let buttonImage = UIImage(named: "Check_after")
+            self.SelectedButton.setImage(buttonImage, for: .normal)
+        }else{
+            let buttonImage = UIImage(named: "Check_before")
+            self.SelectedButton.setImage(buttonImage, for: .normal)
+        }
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

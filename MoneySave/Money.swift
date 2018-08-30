@@ -14,18 +14,21 @@ class Money: Object {
     @objc dynamic var id = 0
 
     //目標
-    @objc dynamic var target = 0
+    @objc dynamic var goal  = ""
 
     //目標貯金額
-    @objc dynamic var goalMoney = 0
+    @objc dynamic var goalMoney = "0"
 
     //現在の貯金額
-    @objc dynamic var nowMoney = 0
+    @objc dynamic var nowMoney = "0"
 
     //達成フラグ
-    @objc dynamic var flg = 0
+    @objc dynamic var goalFlg = 0
     
-    //Moneyの参照先(1対多リレーションシップの作成)
+    //選択フラグ
+    @objc dynamic var selectedFlg = 0
+    
+    //貯金履歴(1対多リレーションシップの作成)
     let reviews = List<Review>()
 
     /**

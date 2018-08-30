@@ -8,6 +8,7 @@
 
 import UIKit
 import SCLAlertView
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
@@ -21,6 +22,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //URL確認する用（あとで消す）
+        //let realm = try! Realm()
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
         // ->背景色を設定する
         self.view.backgroundColor = UIColor(red: 1.0, green: 0.95, blue: 1.0, alpha:1.0)
         
