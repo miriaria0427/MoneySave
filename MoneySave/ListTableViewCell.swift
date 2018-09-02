@@ -22,9 +22,11 @@ class ListTableViewCell: UITableViewCell {
     
     //カスタムセルにデータを反映させる
     func setPostData(money: Money){
+        let nowMoneyResult = changeFormat(setMoney:money.nowMoney)
+        let goalMoneyResult = changeFormat(setMoney:money.goalMoney)
         MokuhyoCellLabel?.text = money.goal
-        NowMoneyCellLabel?.text = money.nowMoney
-        SetMoneyCellLabel?.text = money.goalMoney
+        NowMoneyCellLabel?.text = ("¥\(nowMoneyResult)")
+        SetMoneyCellLabel?.text = ("¥\(goalMoneyResult)")
         
         if(money.goalFlg == 1){
             StatusCellLabel?.text = "達成"
@@ -44,7 +46,20 @@ class ListTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "Check_before")
             self.SelectedButton.setImage(buttonImage, for: .normal)
         }
-        
+    }
+    
+    func changeFormat(setMoney:String) -> String{
+        let setChangeMoney = setMoney
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
+        formatter.groupingSeparator = ","
+        formatter.groupingSize = 3
+        let unwrappedMoney = formatter.string(from: Int(setChangeMoney)! as NSNumber)
+        if let formatedMoney = unwrappedMoney{
+            return formatedMoney
+        }else{
+            return "0"
+        }
     }
     
     override func awakeFromNib() {

@@ -11,13 +11,12 @@ import RealmSwift
 
 class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
-    
     @IBOutlet weak var tableView: UITableView!
     
     //Realmインスタンスを作成する
     let realm = try!Realm()
     
-    //ID昇順でソート（以降データが更新されるたびにリスト内は自動で更新される）
+    //ID昇順でソート
     var taskArray = try!Realm().objects(Money.self).sorted(byKeyPath: "id",ascending: true)
     
     override func viewDidLoad() {
@@ -28,10 +27,6 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         //Identiferを設定
         self.tableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: "ListTableViewCell")
-        
-        // テーブルセルのタップを無効にする
-        tableView.allowsSelection = false
-        
     }
     
     @IBAction func returnToList(_ segue: UIStoryboardSegue) {
@@ -53,22 +48,25 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
-    //        let AddListViewController : AddListViewController = segue.destination as! AddListViewController
-    //             print("通過1")//ここまで通ってる
-    //        //if segue.identifier! == "AddSegue" {
-    //            let money = Money()
-    //            let allMoneys = realm.objects(Money.self)
-    //        print("通過2")//ここまで通ってる
-    //            if allMoneys.count != 0 {
-    //                money.id = allMoneys.max(ofProperty:"id")! + 1
-    //                AddListViewController.money = money
-    //                print("segueはAddSegue\(money.id)")
-    //            }else{
-    //                print("すり抜けてる？！")
-    //                return //仮で一旦return
-    //            }
-    //    }
+    
+    //セルをタップした時にタスク編集画面に遷移する
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("セルがタップされました")
+        performSegue(withIdentifier: "cellSegue",sender: self.tableView)
+    }
+    
+    //タスク編集画面に遷移する時に現在の設定情報を渡す
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        //タグがcellSegueの時に値を引き継ぐ
+        if segue.identifier! == "cellSegue" {
+            let EditListViewController : EditListViewController = segue.destination as! EditListViewController
+            let indexPath = self.tableView.indexPathForSelectedRow
+            EditListViewController.money = taskArray[indexPath!.row]
+        }else{
+            //addSegueのときは何もしない
+            return
+        }
+    }
     
     // 入力画面から戻ってきた時に TableView を更新させる
     override func viewWillAppear(_ animated: Bool) {
@@ -107,7 +105,6 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         }else{
             return
         }
-        
         tableView.reloadData()
     }
     

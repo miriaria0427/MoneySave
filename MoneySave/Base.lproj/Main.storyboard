@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -176,7 +177,6 @@
                                 <state key="normal" title="登録" backgroundImage="pinkButton"/>
                                 <connections>
                                     <action selector="AddButton:" destination="87Z-R0-7eE" eventType="touchUpInside" id="Iwf-ZH-SE1"/>
-                                    <action selector="AddMoney:" destination="87Z-R0-7eE" eventType="touchUpInside" id="Ft3-f4-aSk"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,12 +293,13 @@
                     <navigationItem key="navigationItem" title="目標一覧" id="5KZ-NW-08n">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="9lK-sj-g9q">
                             <connections>
-                                <segue destination="HQA-lj-Lz2" kind="show" identifier="AddSegue" id="4Qu-Rx-J4t"/>
+                                <segue destination="HQA-lj-Lz2" kind="show" identifier="addSegue" id="4Qu-Rx-J4t"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="6h2-ra-juz" id="5Xa-Qt-cVz"/>
+                        <segue destination="bDp-sY-YmI" kind="show" identifier="cellSegue" id="g1c-it-8hG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yd-hz-nE1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -314,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Qbw-Ba-ei5">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="1" green="0.52120530610000004" blue="1" alpha="0.1650524401" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EditCell" id="NzX-FB-BXw">
@@ -323,26 +324,52 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NzX-FB-BXw" id="ISU-J2-0bi">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-xL-hzb">
+                                                    <rect key="frame" x="282" y="14" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="cR0-xL-hzb" secondAttribute="trailing" constant="10" id="Imm-vr-d8f"/>
+                                                <constraint firstItem="cR0-xL-hzb" firstAttribute="top" secondItem="ISU-J2-0bi" secondAttribute="topMargin" constant="3" id="MLg-6m-AwH"/>
+                                                <constraint firstItem="cR0-xL-hzb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ISU-J2-0bi" secondAttribute="leadingMargin" id="Vxy-02-XWD"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFS-Rb-hkl">
+                                <rect key="frame" x="40" y="538" width="295" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jGK-EW-abt"/>
+                                </constraints>
+                                <state key="normal" title="登録" backgroundImage="pinkButton"/>
+                                <connections>
+                                    <action selector="addButton:" destination="bDp-sY-YmI" eventType="touchUpInside" id="8ka-LP-hUw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="leading" secondItem="Xh3-Ff-N2r" secondAttribute="leading" id="7SD-8G-OYA"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="trailing" secondItem="Xh3-Ff-N2r" secondAttribute="trailing" id="7hV-60-mjb"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="top" secondItem="Xh3-Ff-N2r" secondAttribute="top" id="9xL-Hl-ac4"/>
+                            <constraint firstItem="HFS-Rb-hkl" firstAttribute="leading" secondItem="Xh3-Ff-N2r" secondAttribute="leading" constant="40" id="ClO-Cw-7Tg"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="leading" secondItem="Xh3-Ff-N2r" secondAttribute="leading" id="DBt-wX-Evb"/>
+                            <constraint firstItem="Xh3-Ff-N2r" firstAttribute="trailing" secondItem="HFS-Rb-hkl" secondAttribute="trailing" constant="40" id="EEG-Fl-IGp"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="bottom" secondItem="Xh3-Ff-N2r" secondAttribute="bottom" id="HlC-yX-iQh"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="top" secondItem="Xh3-Ff-N2r" secondAttribute="top" id="mRY-TK-eBy"/>
+                            <constraint firstItem="Xh3-Ff-N2r" firstAttribute="bottom" secondItem="HFS-Rb-hkl" secondAttribute="bottom" constant="40" id="q5a-xS-yfp"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="trailing" secondItem="Xh3-Ff-N2r" secondAttribute="trailing" id="tfq-LN-buz"/>
                             <constraint firstItem="Qbw-Ba-ei5" firstAttribute="bottom" secondItem="Xh3-Ff-N2r" secondAttribute="bottom" id="unm-Tk-vSI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xh3-Ff-N2r"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="Qbw-Ba-ei5" id="Bda-Ew-vfs"/>
+                        <outlet property="tableView" destination="Qbw-Ba-ei5" id="nab-eu-aSK"/>
                         <segue destination="mba-XV-2H3" kind="show" identifier="ReviewSegue" id="2RF-AB-K1b"/>
                     </connections>
                 </viewController>

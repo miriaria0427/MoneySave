@@ -61,7 +61,6 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
     //セクションの個数を返す
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionIndex.count
-        
     }
     
     //各セルが選択された時の挙動
@@ -144,11 +143,9 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     money.goalMoney = SaveGoalMoney!
                     money.goalFlg = 0
                     realm.add(money, update: true)
-                
-                //登録成功のポップアップを表示して画面を閉じる
-                alert.showInfo("登録完了", subTitle: "")
-                
             }
+            //登録成功のポップアップを表示して画面を閉じる
+            alert.showInfo("登録完了", subTitle: "")
         }
     }
     
