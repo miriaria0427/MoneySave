@@ -11,7 +11,7 @@ import SCLAlertView
 import RealmSwift
 
 class HomeViewController: UIViewController {
-        
+    
     @IBOutlet weak var pig: UIImageView!
     @IBOutlet weak var Mokuhyolabel: UILabel!
     @IBOutlet weak var NowMoney: UILabel!
@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
     //Realmインスタンスを作成する
     let realm = try!Realm()
     
-    //ID昇順でソート（以降データが更新されるたびにリスト内は自動で更新される）
-    //var taskArray = try!Realm().objects(Money.self).sorted(byKeyPath: "id",ascending: true)
+    //ID昇順でソート
+    var taskArray = try!Realm().objects(Money.self).sorted(byKeyPath: "id",ascending: true)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
         let textAttributes: [NSAttributedStringKey : Any] = [
             .underlineStyle :NSUnderlineStyle.styleSingle.rawValue
         ]
-       
+        
         let text = NSAttributedString(string: textlabel, attributes: textAttributes)
         NowMoney.attributedText = text
         
@@ -55,12 +55,19 @@ class HomeViewController: UIViewController {
     
     //表示項目を設定するメソッド
     func setView(){
-        let results = realm.objects(Money.self).filter("selectedFlg == 1")
-        let nowMoneyResult = changeFormat(setMoney:results[0].nowMoney)
-        let goalMoneyResult = changeFormat(setMoney:results[0].goalMoney)
-        Mokuhyolabel.text = results[0].goal
-        NowMoney.text =  ("¥\(nowMoneyResult)")
-        SetMoney.text = ("¥\(goalMoneyResult)")
+        //初回はデフォルトの値を設定しておく
+        if (taskArray.count == 0){
+            Mokuhyolabel.text = "目標を設定しよう!"
+            NowMoney.text =  ("¥1,000")
+            SetMoney.text = ("¥5,000")
+        }else{
+            let results = realm.objects(Money.self).filter("selectedFlg == 1")
+            let nowMoneyResult = changeFormat(setMoney:results[0].nowMoney)
+            let goalMoneyResult = changeFormat(setMoney:results[0].goalMoney)
+            Mokuhyolabel.text = results[0].goal
+            NowMoney.text =  ("¥\(nowMoneyResult)")
+            SetMoney.text = ("¥\(goalMoneyResult)")
+        }
     }
     
     //金額項目を3桁に区切るメソッド
@@ -83,20 +90,20 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         setView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -21,6 +21,11 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
     //目標金額保存用変数
     var SaveGoalMoney : String?
     
+    //Realmインスタンスの作成
+    let realm = try!Realm()
+    //ID昇順でソート
+    var taskArray = try!Realm().objects(Money.self).sorted(byKeyPath: "id",ascending: true)
+    
     //セクション
     var sectionIndex:[String] = ["目標","金額"]
     
@@ -129,8 +134,6 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
         }else if(moneyCell?.textLabel?.text == ""){
             alert.showWarning("", subTitle: "金額を入力して下さい", closeButtonTitle: "OK")
         }else{
-            //Realmインスタンスの作成
-            let realm = try!Realm()
             let money = Money()
             let allMoneys = realm.objects(Money.self)
             //登録情報をRealmに保存する
@@ -142,6 +145,10 @@ class AddListViewController: UIViewController,UITableViewDataSource,UITableViewD
                     money.goal = (goalCell?.textLabel?.text)!
                     money.goalMoney = SaveGoalMoney!
                     money.goalFlg = 0
+                //初回登録時は選択フラグに1を設定
+                if(taskArray.count == 0){
+                    money.selectedFlg = 1
+                }
                     realm.add(money, update: true)
             }
             //登録成功のポップアップを表示して画面を閉じる
